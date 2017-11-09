@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 指定数据库文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+
+	<!-- 配置c3p0连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<!-- 数据库连接信息 -->
+		<property name="driverClass" value="${driver}"/>
+		<property name="jdbcUrl" value="${url}"/>
+		<property name="user" value="${username}"/>
+		<property name="password" value="${password}"/>
+		<!-- 最大连接数 -->
+		<property name="maxPoolSize" value="30"/>
+		<!-- 最小连接数 -->
+		<property name="minPoolSize" value="10"/>
+		<!-- 获取连接的超时时间，毫秒 -->
+		<property name="checkoutTimeout" value="5000"/>
+		<!-- 连接失败后的重连次数 -->
+		<property name="acquireRetryAttempts" value="1"/>
+	</bean>
+	
+	<!-- 配置事务管理器，MyBatis采用jdbc的事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!-- 指定数据源 -->
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!-- 配置声明式事务 -->
+	<tx:annotation-driven/>
+	
+	<!-- 配置SqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 指定数据源 -->
+		<property name="dataSource" ref="dataSource"/>
+		<!-- 指定MyBatis全局配置文件 -->
+		<property name="configLocation" value="classpath:spring-mybatis.xml"/>
+		<!-- 指定实体类扫描路径 -->
+		<property name="typeAliasesPackage" value="online.shixun.asl.dto"/>
+		<!-- 指定映射文件的扫描路径 -->
+		<property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
+	</bean>
+	
+	<!-- 将Dao注入Spring容器中 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 指定扫描路径 -->
+		<property name="basePackage" value="online.shixun.asl.module"/>
+		<!-- 扫描带有@MyBatisRepository -->
+		<property name="annotationClass" value="online.shixun.asl.core.MyBatisRepository"/>
+	</bean>
+
+</beans>
