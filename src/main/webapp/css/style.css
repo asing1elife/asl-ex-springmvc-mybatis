@@ -140,6 +140,21 @@
     color: #2a3542;
 }
 
+.form .form-group.error-group .input-content,
+.form .form-group.error-group .input-content:focus,
+.form .form-group.error-group .textarea-content,
+.form .form-group.error-group .textarea-content:focus {
+	border-color: #ff0000;
+}
+
+.form .form-group.error-group .input-label {
+	color: #ff0000;
+}
+
+.form .form-group.error-group .input-label span {
+	float: right;
+}
+
 .form .form-group .input-content,
 .form .form-group .select-content {
     font-size: 14px;

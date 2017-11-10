@@ -1,4 +1,7 @@
 /* 2017-11-10 */
+-- 创建数据库
+CREATE DATABASE asl_ums_temp;
+
 -- 创建部门表
 CREATE TABLE al_department (
 	id BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT "id",

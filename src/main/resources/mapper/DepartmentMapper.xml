@@ -13,5 +13,18 @@
 		FROM
 			al_department de
 	</select>
+	
+	<!-- 保存部门 -->
+	<insert id="saveDepartment">
+		INSERT INTO al_department (
+			code,
+			name,
+			description
+		) VALUES (
+			#{code},
+			#{name},
+			#{description}
+		)
+	</insert>
 
 </mapper>

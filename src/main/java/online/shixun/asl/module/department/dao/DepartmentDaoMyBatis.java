@@ -20,4 +20,9 @@ public interface DepartmentDaoMyBatis {
 	 */
 	List<DepartmentDTO> getDepartments();
 	
+	/**
+	 * 保存部门
+	 * @param department
+	 */
+	void saveDepartment(DepartmentDTO department);
 }

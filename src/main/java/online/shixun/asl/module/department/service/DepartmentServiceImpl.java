@@ -27,5 +27,13 @@ public class DepartmentServiceImpl {
 	public List<DepartmentDTO> getDepartments() {
 		return departmentDao.getDepartments();
 	}
+	
+	/**
+	 * 保存部门
+	 * @param department
+	 */
+	public void saveDepartment(DepartmentDTO department) {
+		departmentDao.saveDepartment(department);
+	}
 
 }
