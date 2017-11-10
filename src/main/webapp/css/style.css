@@ -1,0 +1,204 @@
+/**
+ * Button Style
+ */
+
+.btn {
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 3px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 1px solid #ebedf1;
+    color: #2a3542;
+    background-color: #f6f7f8;
+}
+
+.btn-bg {
+    height: 35px;
+    padding: 5px 40px;
+}
+
+.btn-xs {
+    padding: 1px 5px;
+}
+
+.btn i {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.btn:hover {
+    filter: grayscale(0.4);
+    border-color: #2388cd;
+    color: #2388cd;
+}
+
+.btn:active {
+    filter: grayscale(0);
+}
+
+
+
+/**
+ * Link style
+ */
+
+.link {
+    text-decoration: none;
+    padding: 0;
+    color: #a4a2a4;
+    font-size: 13px;
+    letter-spacing: 0;
+}
+
+.link.link-primary:hover {
+    color: #42cac0;
+}
+
+.link.link-success:hover {
+    color: #77cd51;
+}
+
+.link.link-info:hover {
+    color: #8075c6;
+}
+
+.link.link-warning:hover {
+    color: #f2c403;
+}
+
+.link.link-danger:hover {
+    color: #ff6c60;
+}
+
+
+
+
+
+
+
+/**
+ * Table style 
+ */
+
+.table {
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+.table.table-stripe tr:nth-child(2n - 1) td {
+    background-color: #f9f9f9;
+}
+
+.table.table-hover tr:hover td {
+    background-color: #eeeeee;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.table th:last-child,
+.table td:last-child {
+    text-align: right;
+}
+
+.table th {
+    border-bottom: 2px solid #dddddd;
+}
+
+
+
+
+
+
+
+/*
+ * Form Style 
+ */
+
+.form .form-group {
+    width: 50%;
+    height: 70px;
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form .form-group .input-label {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 0;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: #2a3542;
+}
+
+.form .form-group .input-content,
+.form .form-group .select-content {
+    font-size: 14px;
+    color: #757575;
+    border: 1px solid #bbbbbb;
+    padding: 8px 10px;
+    height: 18px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.form .form-group .input-content::-webkit-input-placeholder {
+    color: #c2c2c2;
+}
+
+.form .form-group .input-content[disabled] {
+    background-color: #eeeeee;
+}
+
+.form .form-group .input-content:focus {
+    border-color: #517397;
+}
+
+.form .form-group .select-content {
+    height: 36px;
+    background-color: #ffffff;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.form .form-group .select-arrow {
+    position: absolute;
+    top: 47px;
+    right: 10px;
+    width: 5px;
+    height: 5px;
+}
+
+.form .form-group .select-arrow:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+
+.form .form-group .select-arrow:after {
+    bottom: 0;
+    border-top: 6px solid #404040;
+}
+
+.form .form-group .radio-content {
+    font-size: 14px;
+}
+
+.form .form-group .radio-content input {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.form .form-group .radio-content input:last-child {
+    margin-left: 20px;
+}

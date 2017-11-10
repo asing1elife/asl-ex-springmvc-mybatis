@@ -1,0 +1,151 @@
+ html,
+ body,
+ ul,
+ li,
+ div,
+ button,
+ h2,
+ input,
+ select {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     outline: 0;
+     font-size: 100%;
+     font-family: Arial, verdana, arial, sans-serif;
+ }
+
+ html,
+ body {
+     height: 100%;
+ }
+
+ body {
+     display: flex;
+     flex-direction: column;
+ }
+
+ #topLogoPanel {
+     flex-basis: 90px;
+     display: flex;
+     justify-content: center;
+     background-image: url(../images/background.png);
+     background-size: cover;
+     margin-bottom: 40px;
+ }
+
+ #bottomContentPanel {
+     flex-grow: 1;
+     display: flex;
+     justify-content: center;
+ }
+
+ #topLogoPanel .top-logo-panel,
+ #bottomContentPanel .bottom-content-panel {
+     flex-basis: 1180px;
+ }
+
+ #topLogoPanel .top-logo-panel {
+     padding: 20px;
+ }
+
+ #bottomContentPanel .bottom-content-panel {
+     display: flex;
+ }
+
+ #topLogoPanel .top-logo-panel img {
+     height: 50px;
+     animation: logo-rotate 12s ease-in-out infinite;
+ }
+
+ @keyframes logo-rotate {
+     0%,
+     50% {
+         -webkit-transform: rotate(0);
+         -moz-transform: rotate(0);
+         -ms-transform: rotate(0);
+         -o-transform: rotate(0);
+         transform: rotate(0);
+     }
+     100% {
+         -webkit-transform: rotate(360deg);
+         -moz-transform: rotate(360deg);
+         -ms-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+         transform: rotate(360deg);
+     }
+ }
+
+ #bottomContentPanel .bottom-content-panel .left-menu-panel {
+     flex-basis: 200px;
+     flex-shrink: 0;
+     margin-right: 40px;
+ }
+
+ #bottomContentPanel .bottom-content-panel .right-content-panel {
+     flex-grow: 1;
+     display: flex;
+ }
+
+ #bottomContentPanel .left-menu-panel .menu-item-list {
+     list-style: none;
+ }
+
+ #bottomContentPanel .left-menu-panel .menu-item-list .menu-item {
+     height: 40px;
+     display: flex;
+     line-height: 40px;
+     padding: 0 20px;
+     background-color: #f6f7f8;
+ }
+
+ #bottomContentPanel .left-menu-panel .menu-item-list .menu-item:not(:last-child) {
+     border-bottom: 1px solid #ebedf1;
+ }
+
+ #bottomContentPanel .left-menu-panel .menu-item-list .menu-item a {
+     flex-grow: 1;
+     text-decoration: none;
+     color: #2a3542;
+ }
+
+ #bottomContentPanel .left-menu-panel .menu-item-list .menu-item.active a {
+     color: #2388cd;
+ }
+
+ #bottomContentPanel .right-content-panel>div {
+     flex-grow: 1;
+     display: flex;
+     flex-direction: column;
+ }
+
+ #bottomContentPanel .right-content-panel .toolbar-menu-panel {
+     flex-basis: 35px;
+ }
+
+ #bottomContentPanel .right-content-panel .real-content-panel {
+     flex-grow: 1;
+     overflow: auto;
+     margin: 15px 0;
+     padding-right: 15px;
+ }
+
+ #bottomContentPanel .right-content-panel .headline {
+     flex-basis: 40px;
+     margin-bottom: 20px;
+     border-bottom: 1px solid #ebedf1;
+ }
+
+ #bottomContentPanel .right-content-panel .headline h2 {
+    font-size: 25px;
+ }
+
+ #bottomContentPanel .right-content-panel .real-content-form {
+    overflow: auto;
+}
+
+ #bottomContentPanel .right-content-panel .bottom-menu-panel {
+    flex-basis: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #ebedf1;
+}

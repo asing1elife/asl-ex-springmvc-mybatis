@@ -4,7 +4,7 @@
  * All rights reserved
  *
 *****************************************************************************/
-package online.shixun.asl.module.department.dao;
+package online.shixun.asl.module.user.dao;
 
 import java.util.List;
 
@@ -12,12 +12,7 @@ import online.shixun.asl.core.MyBatisRepository;
 import online.shixun.asl.dto.DepartmentDTO;
 
 @MyBatisRepository
-public interface DepartmentDaoMyBatis {
+public interface UserDaoMyBatis {
 
-	/**
-	 * 获取部门
-	 * @return
-	 */
-	List<DepartmentDTO> getDepartments();
 	
 }

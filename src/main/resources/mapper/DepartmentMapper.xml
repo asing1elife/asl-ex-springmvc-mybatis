@@ -2,4 +2,16 @@
 
 <mapper namespace="online.shixun.asl.module.department.dao.DepartmentDaoMyBatis">
 
+	<!-- 获取部门列表 -->
+	<select id="getDepartments" resultType="DepartmentDTO">
+		SELECT
+			de.id,
+			de.code,
+			de.name,
+			de.description,
+			de.createTime
+		FROM
+			al_department de
+	</select>
+
 </mapper>
