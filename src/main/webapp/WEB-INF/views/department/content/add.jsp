@@ -8,12 +8,12 @@
 	<form class="real-content-form form" name="department" action="${ctx }/department/content/save" method="post">
 		<div class="form-group">
 			<label class="input-label">编码</label> 
-			<input name="code" class="input-content" type="text" autofocus>
+			<input name="code" class="input-content" type="text" placeholder="请输入编码" autofocus>
 		</div>
 		<div class="form-group">
 			<label class="input-label">名称</label> <input name="name" class="input-content" type="text" placeholder="请输入名称">
 		</div>
-		<div class="form-group">
+		<div class="form-group textarea-group">
 			<label class="input-label">描述</label>
 			<textarea name="description" class="textarea-content" placeholder="请输入描述"></textarea>
 		</div>
