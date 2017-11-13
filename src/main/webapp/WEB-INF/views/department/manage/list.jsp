@@ -20,13 +20,13 @@
 					<tr data-id="${department.id }">
 						<td><input type="checkbox" name="ids">&nbsp;${status.count }</td>
 						<td>${department.code }</td>
-						<td>${department.name }</td>	
+						<td>${department.name }</td>
 						<td>${department.createTime }</td>
 						<td>
 							<button class="btn btn-xs edit-department-btn">
 								<i class="fa fa-pencil"></i>
 							</button>
-							<button class="btn btn-xs">
+							<button class="btn btn-xs remove-department-btn">
 								<i class="fa fa-trash-o"></i>
 							</button>
 						</td>
@@ -38,24 +38,46 @@
 </div>
 
 <script>
-	$(function () {
+	$(function() {
 		var $departmentManageListPanel = $("#departmentManageListPanel");
-		
+
 		// 添加部门
-		$departmentManageListPanel.find(".add-department-btn").on("click", function () {
-			loadMainContent("/department/content/add", function () {
-				
-			}, {departmentId: -1});
+		$departmentManageListPanel.find(".add-department-btn").on("click", function() {
+			loadMainContent("/department/content/add", function() {
+
+			}, {
+				departmentId : -1
+			});
 		});
-		
+
 		// 编辑部门
-		$departmentManageListPanel.find(".edit-department-btn").on("click", function () {
+		$departmentManageListPanel.find(".edit-department-btn").on("click", function() {
 			var $this = $(this);
 			var departmentId = $this.parent().parent().data("id");
-			
-			loadMainContent("/department/content/add", function () {
-				
-			}, {departmentId: departmentId});
+
+			loadMainContent("/department/content/add", function() {
+
+			}, {
+				departmentId : departmentId
+			});
+		});
+
+		// 删除部门
+		$departmentManageListPanel.find(".remove-department-btn").on("click", function() {
+			var $this = $(this);
+			var departmentId = $this.parent().parent().data("id");
+
+			// 操作确认
+			if (!confirm("确定删除该部门？")) {
+				return false;
+			}
+
+			doAction("/department/content/remove", {
+				departmentId : departmentId
+			}, function(data) {
+				// 刷新列表
+				triggerCurrentMenu();
+			}, "删除成功！");
 		});
 	});
 </script>

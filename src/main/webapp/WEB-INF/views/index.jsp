@@ -96,6 +96,31 @@
 			// 触发当前被激活的菜单项的点击事件
 			$menuItemList.find(".menu-item.active").trigger("click");
 		}
+		
+		// 通用异步请求
+		function doAction(url, params, callback, message) {
+			$.ajax({
+				url: g_rootPath + url,
+				type: "POST",
+				dataType: "TEXT",
+				data: params,
+				success: function (data) {
+					// 判断回调函数是否是一个方法
+					if (typeof callback === "function") {
+						// call()用于触发指定方法
+						// 传入的参数将直接应用于具体方法上
+						callback.call(data);
+					}
+					
+					// 判断信息是否有效
+					if (message === undefined || $.trim(message) === "") {
+						return false;
+					}
+					
+					alert(message);
+				}
+			})
+		}
 	</script>
 </body>
 

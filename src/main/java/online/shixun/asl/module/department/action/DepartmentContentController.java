@@ -49,4 +49,17 @@ public class DepartmentContentController {
 		return "success";
 	}
 	
+	/**
+	 * 删除部门
+	 * @param departmentId
+	 * @return
+	 */
+	@RequestMapping(value = "/remove", method = RequestMethod.POST)
+	@ResponseBody
+	public String remove(@RequestParam("departmentId") Long departmentId) {
+		departmentService.removeDepartment(departmentId);
+		
+		return "success";
+	}
+	
 }

@@ -35,4 +35,10 @@ public interface DepartmentDaoMyBatis {
 	 */
 	void saveOrUpdateDepartment(DepartmentDTO department);
 	
+	/**
+	 * 根据id删除部门
+	 * @param departmentId
+	 */
+	void removeDepartment(@Param("departmentId") Long departmentId);
+	
 }

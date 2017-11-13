@@ -50,5 +50,13 @@ public class DepartmentServiceImpl {
 	public void saveOrUpdateDepartment(DepartmentDTO department) {
 		departmentDao.saveOrUpdateDepartment(department);
 	}
+	
+	/**
+	 * 根据id删除部门
+	 * @param departmentId
+	 */
+	public void removeDepartment(Long departmentId) {
+		departmentDao.removeDepartment(departmentId);
+	}
 
 }

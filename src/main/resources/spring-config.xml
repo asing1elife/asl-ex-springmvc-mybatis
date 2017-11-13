@@ -48,7 +48,7 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 指定扫描路径 -->
 		<property name="basePackage" value="online.shixun.asl.module"/>
-		<!-- 扫描带有@MyBatisRepository -->
+		<!-- 扫描带有@MyBatisRepository的类 -->
 		<property name="annotationClass" value="online.shixun.asl.core.MyBatisRepository"/>
 	</bean>
 
