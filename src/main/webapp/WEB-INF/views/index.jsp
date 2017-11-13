@@ -93,6 +93,7 @@
 		
 		// 触发当前菜单点击
 		function triggerCurrentMenu() {
+			// 触发当前被激活的菜单项的点击事件
 			$menuItemList.find(".menu-item.active").trigger("click");
 		}
 	</script>

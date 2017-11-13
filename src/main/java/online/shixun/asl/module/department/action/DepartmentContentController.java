@@ -8,9 +8,11 @@ package online.shixun.asl.module.department.action;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import online.shixun.asl.dto.DepartmentDTO;
@@ -28,7 +30,9 @@ public class DepartmentContentController {
 	 * @return
 	 */
 	@RequestMapping("/add")
-	public String main() {
+	public String main(Model model, @RequestParam("departmentId") Long departmentId) {
+		model.addAttribute("department", departmentService.getDepartment(departmentId));
+		
 		return "/department/content/add";
 	}
 	
@@ -40,7 +44,7 @@ public class DepartmentContentController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	@ResponseBody
 	public String save(@ModelAttribute DepartmentDTO department) {
-		departmentService.saveDepartment(department);
+		departmentService.saveOrUpdateDepartment(department);
 		
 		return "success";
 	}

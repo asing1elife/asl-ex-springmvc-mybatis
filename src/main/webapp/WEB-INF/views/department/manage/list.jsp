@@ -17,13 +17,13 @@
 			</thead>
 			<tbody>
 				<c:forEach var="department" items="${departments }" varStatus="status">
-					<tr>
+					<tr data-id="${department.id }">
 						<td><input type="checkbox" name="ids">&nbsp;${status.count }</td>
 						<td>${department.code }</td>
 						<td>${department.name }</td>	
 						<td>${department.createTime }</td>
 						<td>
-							<button class="btn btn-xs">
+							<button class="btn btn-xs edit-department-btn">
 								<i class="fa fa-pencil"></i>
 							</button>
 							<button class="btn btn-xs">
@@ -43,7 +43,19 @@
 		
 		// 添加部门
 		$departmentManageListPanel.find(".add-department-btn").on("click", function () {
-			loadMainContent("/department/content/add");
+			loadMainContent("/department/content/add", function () {
+				
+			}, {departmentId: -1});
+		});
+		
+		// 编辑部门
+		$departmentManageListPanel.find(".edit-department-btn").on("click", function () {
+			var $this = $(this);
+			var departmentId = $this.parent().parent().data("id");
+			
+			loadMainContent("/department/content/add", function () {
+				
+			}, {departmentId: departmentId});
 		});
 	});
 </script>
