@@ -97,8 +97,8 @@
 		
 		// 删除多个部门
 		$departmentManageListPanel.find(".remove-departments-btn").on("click", function () {
-			// 获取所有复选框
-			var allItems = $departmentManageListPanel.find(".department-item-id");
+			// 获取被选中复选框
+			var checkedItems = $departmentManageListPanel.find(".department-item-id:checked");
 			
 			// 非空判断
 			if (allItems.length === 0) {
