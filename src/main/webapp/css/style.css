@@ -231,3 +231,8 @@
 .form .form-group .radio-content input:last-child {
     margin-left: 20px;
 }
+
+/* Common Style */
+.cursor-pointer {
+	cursor: pointer;
+}

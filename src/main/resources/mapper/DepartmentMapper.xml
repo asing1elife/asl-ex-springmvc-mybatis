@@ -53,5 +53,13 @@
 		WHERE
 			id = #{departmentId}
 	</delete>
+	
+	<!-- 根据id删除多个部门 -->
+	<delete id="removeDepartments">
+		DELETE FROM
+			al_department
+		WHERE
+			id IN (${departmentIds})
+	</delete>
 
 </mapper>

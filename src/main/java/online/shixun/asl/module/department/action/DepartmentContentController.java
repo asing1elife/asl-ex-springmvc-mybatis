@@ -62,4 +62,17 @@ public class DepartmentContentController {
 		return "success";
 	}
 	
+	/**
+	 * 删除多个部门
+	 * @param departmentIds
+	 * @return
+	 */
+	@RequestMapping(value = "/removes", method = RequestMethod.POST)
+	@ResponseBody
+	public String removes(@RequestParam("departmentIds") String departmentIds) {
+		departmentService.removeDepartments(departmentIds);
+		
+		return "success";
+	}
+	
 }

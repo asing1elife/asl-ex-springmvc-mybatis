@@ -41,4 +41,10 @@ public interface DepartmentDaoMyBatis {
 	 */
 	void removeDepartment(@Param("departmentId") Long departmentId);
 	
+	/**
+	 * 根据id删除多个部门
+	 * @param departmentId
+	 */
+	void removeDepartments(@Param("departmentIds") String departmentIds);
+	
 }

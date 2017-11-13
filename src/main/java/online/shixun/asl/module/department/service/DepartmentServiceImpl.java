@@ -58,5 +58,13 @@ public class DepartmentServiceImpl {
 	public void removeDepartment(Long departmentId) {
 		departmentDao.removeDepartment(departmentId);
 	}
+	
+	/**
+	 * 根据id删除多个部门
+	 * @param departmentId
+	 */
+	public void removeDepartments(String departmentIds) {
+		departmentDao.removeDepartments(departmentIds);
+	}
 
 }
