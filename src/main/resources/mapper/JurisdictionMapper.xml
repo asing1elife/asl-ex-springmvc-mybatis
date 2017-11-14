@@ -1,0 +1,60 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="online.shixun.asl.module.jurisdiction.dao.JurisdictionDaoMyBatis">
+
+	<!-- 获取权限列表 -->
+	<select id="getJurisdictions" resultType="JurisdictionDTO">
+		SELECT
+			de.id,
+			de.name,
+			de.description,
+			de.createTime
+		FROM
+			al_jurisdiction de
+	</select>
+
+	<!-- 根据id获取权限 -->
+	<select id="getJurisdiction" resultType="JurisdictionDTO">
+		SELECT
+			de.id,
+			de.name,
+			de.description
+		FROM
+			al_jurisdiction de
+		WHERE
+			de.id = #{id}
+	</select>
+
+	<!-- 新增或更新权限 -->
+	<insert id="saveOrUpdateJurisdiction">
+		INSERT INTO al_jurisdiction (
+			id,
+			name,
+			description
+		) VALUES (
+			#{id},
+			#{name},
+			#{description}
+		)
+		ON DUPLICATE KEY UPDATE
+			name = #{name},
+			description = #{description}
+	</insert>
+	
+	<!-- 根据id删除权限 -->
+	<delete id="removeJurisdiction">
+		DELETE FROM
+			al_jurisdiction
+		WHERE
+			id = #{jurisdictionId}
+	</delete>
+	
+	<!-- 根据id删除多个权限 -->
+	<delete id="removeJurisdictions">
+		DELETE FROM
+			al_jurisdiction
+		WHERE
+			id IN (${jurisdictionIds})
+	</delete>
+
+</mapper>

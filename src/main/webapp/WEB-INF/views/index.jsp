@@ -39,7 +39,7 @@
 							<spring:message code="menu.role" />
 						</a>
 					</li>
-					<li class="menu-item" data-url="#">
+					<li class="menu-item" data-url="/jurisdiction/manage/list">
 						<a href="javascript:;">
 							<spring:message code="menu.jurisdiction" />
 						</a>
