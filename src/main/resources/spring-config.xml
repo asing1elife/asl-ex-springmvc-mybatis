@@ -51,5 +51,15 @@
 		<!-- 扫描带有@MyBatisRepository的类 -->
 		<property name="annotationClass" value="online.shixun.asl.core.MyBatisRepository"/>
 	</bean>
+	
+	<!-- 配置i18n资源文件 -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<!-- 资源文件路径 -->
+		<property name="basename" value="classpath:messages/message"/>
+		<!-- 默认编码 -->
+		<property name="defaultEncoding" value="UTF-8"/>
+		<!-- 指定默认资源文件 -->
+		<property name="useCodeAsDefaultMessage" value="true"/>
+	</bean>
 
 </beans>
