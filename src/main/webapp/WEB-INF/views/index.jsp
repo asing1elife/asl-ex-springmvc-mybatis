@@ -20,8 +20,7 @@
 					<select class="select-content select-content-btn">
 						<option value="zh_CN" <c:if test="${encoding eq 'zh_CN' }">selected</c:if>>中文</option>
 						<option value="en_US" <c:if test="${encoding eq 'en_US' }">selected</c:if>>English</option>
-						
-					</select>
+					</select> <i class="select-arrow"></i>
 				</div>
 			</div>
 		</div>
@@ -82,12 +81,12 @@
 				// 加载页面
 				loadMainContent(url);
 			}).first().click();
-			
+
 			// 切换语言
-			$topLogoPanel.find(".select-content-btn").on("change", function () {
+			$topLogoPanel.find(".select-content-btn").on("change", function() {
 				var $this = $(this);
 				var language = $this.val();
-				
+
 				// 刷新页面
 				location.href = g_rootPath + "/index/" + language;
 			});

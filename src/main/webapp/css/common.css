@@ -33,8 +33,7 @@ body {
 	justify-content: center;
 }
 
-#topLogoPanel .top-logo-panel, #bottomContentPanel .bottom-content-panel
-	{
+#topLogoPanel .top-logo-panel, #bottomContentPanel .bottom-content-panel {
 	flex-basis: 1180px;
 }
 
@@ -53,6 +52,10 @@ body {
 
 #topLogoPanel .select-langugae-panel .form-group {
 	width: 100%;
+}
+
+#topLogoPanel .select-langugae-panel .form-group .select-arrow {
+	top: 18px;
 }
 
 #bottomContentPanel .bottom-content-panel {
