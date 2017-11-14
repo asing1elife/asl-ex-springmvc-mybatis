@@ -101,7 +101,7 @@
 			var checkedItems = $departmentManageListPanel.find(".department-item-id:checked");
 			
 			// 非空判断
-			if (allItems.length === 0) {
+			if (checkedItems.length === 0) {
 				alert("请选择待删除部门！");
 				return false;
 			}
@@ -115,7 +115,7 @@
 			var departmentIds = "";
 			
 			// 循环遍历被选中项
-			allItems.each(function () {
+			checkedItems.each(function () {
 				departmentIds += $(this).val() + ",";
 			});
 			

@@ -36,7 +36,7 @@
 	<!-- 将Locale信息存放于Session中 -->
 	<!-- id必须是localeResolver，否则会报cannot change HTTP Head ... -->
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
-
+	
 	<!-- 配置拦截器获取Locale信息 -->
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
