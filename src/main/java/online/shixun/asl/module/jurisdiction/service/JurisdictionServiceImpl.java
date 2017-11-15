@@ -28,6 +28,14 @@ public class JurisdictionServiceImpl {
 	public List<JurisdictionDTO> getJurisdictions() {
 		return jurisdictionDao.getJurisdictions();
 	}
+	
+	/**
+	 * 获取权限基本信息列表
+	 * @return
+	 */
+	public List<JurisdictionDTO> getSimpleJurisdictions() {
+		return jurisdictionDao.getSimpleJurisdictions();
+	}
 
 	/**
 	 * 根据id获取权限

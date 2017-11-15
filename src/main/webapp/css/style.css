@@ -219,16 +219,19 @@
     border-top: 6px solid #404040;
 }
 
-.form .form-group .radio-content {
+.form .form-group .radio-content,
+.form .form-group .checkbox-content {
     font-size: 14px;
 }
 
-.form .form-group .radio-content input {
+.form .form-group .radio-content input,
+.form .form-group .checkbox-content input {
     margin-right: 5px;
     margin-left: 5px;
 }
 
-.form .form-group .radio-content input:last-child {
+.form .form-group .radio-content label:not(:first-child),
+.form .form-group .checkbox-content label:not(:first-child) {
     margin-left: 20px;
 }
 

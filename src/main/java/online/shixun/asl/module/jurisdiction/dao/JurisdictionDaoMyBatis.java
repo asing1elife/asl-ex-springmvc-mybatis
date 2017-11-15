@@ -23,6 +23,12 @@ public interface JurisdictionDaoMyBatis {
 	List<JurisdictionDTO> getJurisdictions();
 	
 	/**
+	 * 获取权限基本信息列表
+	 * @return
+	 */
+	List<JurisdictionDTO> getSimpleJurisdictions();
+	
+	/**
 	 * 根据id获取权限
 	 * @param id
 	 * @return

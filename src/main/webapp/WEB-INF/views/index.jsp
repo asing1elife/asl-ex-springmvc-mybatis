@@ -34,7 +34,7 @@
 							<spring:message code="menu.user" />
 						</a>
 					</li>
-					<li class="menu-item" data-url="#">
+					<li class="menu-item" data-url="/role/manage/list">
 						<a href="javascript:;">
 							<spring:message code="menu.role" />
 						</a>
@@ -56,6 +56,7 @@
 	</div>
 	<script type="text/javascript" src="${ctx }/plugins/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="${ctx }/plugins/jquery-form/jquery.form.min.js"></script>
+	<script type="text/javascript" src="${ctx }/plugins/validate/jquery-html5Validate-min.js"></script>
 	<script type="text/javascript">
 		var g_rootPath = "${ctx}";
 

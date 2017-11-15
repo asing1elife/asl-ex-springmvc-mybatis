@@ -13,6 +13,15 @@
 			al_jurisdiction de
 	</select>
 
+	<!-- 获取权限基本信息列表 -->
+	<select id="getSimpleJurisdictions" resultType="JurisdictionDTO">
+		SELECT
+			de.id,
+			de.name
+		FROM
+			al_jurisdiction de
+	</select>
+
 	<!-- 根据id获取权限 -->
 	<select id="getJurisdiction" resultType="JurisdictionDTO">
 		SELECT

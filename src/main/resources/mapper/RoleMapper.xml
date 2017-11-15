@@ -1,0 +1,48 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="online.shixun.asl.module.role.dao.RoleDaoMyBatis">
+
+	<!-- 获取角色列表 -->
+	<select id="getRoles" resultType="RoleDTO">
+		SELECT
+			ro.id,
+			ro.name,
+			ro.description,
+			ro.createTime
+		FROM
+			al_role ro
+	</select>
+	
+	<!-- 新增或更新角色，并填充角色id -->
+	<insert id="saveOrUpdateRole" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO al_role (
+			id,
+			name,
+			description			
+		)
+		VALUES (
+			#{id},
+			#{name},
+			#{description}	
+		)
+		ON DUPLICATE KEY UPDATE
+			name = #{name},
+			description = #{description}
+	</insert>
+	
+	<!-- 新增角色权限关联 -->
+	<insert id="saveRoleJurisdictions">
+		INSERT INTO al_role_jurisdiction (
+			role_id,
+			jurisdiction_id
+		)
+		VALUES 
+		<foreach item="jurisdiction" collection="jurisdictions" separator=",">
+		(
+			#{id},
+			#{jurisdiction.id}
+		)
+		</foreach>
+	</insert>
+
+</mapper>
