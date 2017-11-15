@@ -15,13 +15,12 @@
 	<form class="real-content-form form" name="role" action="${ctx }/role/content/save" method="post">
 		<input type="hidden" name="id" value="${role.id }">
 		<div class="form-group">
-			<label class="input-label">名称</label> 
-			<input name="name" class="input-content" type="text" placeholder="请输入名称" value="${role.name }" autofocus>
+			<label class="input-label">名称</label> <input name="name" class="input-content" type="text" placeholder="请输入名称" value="${role.name }" autofocus>
 		</div>
 		<div class="form-group">
 			<label class="input-label">权限</label>
 			<div class="checkbox-content">
-				<c:forEach var="jurisdiction" items="${jurisdictions }" varStatus="status">
+				<c:forEach var="jurisdiction" items="${jurisdictions }">
 					<label><input name="jurisdiction" type="checkbox" value="${jurisdiction.id }"> ${jurisdiction.name }</label>
 				</c:forEach>
 			</div>
@@ -41,10 +40,11 @@
 	$(function() {
 		var $roleAddPanel = $("#roleAddPanel");
 		var $roleContentForm = $roleAddPanel.find("form");
-		
+
 		// 初始化表单提交
-		$roleContentForm.html5Validate(function () {
-			// 执行表单提交
+		$roleContentForm.html5Validate(function() {
+			// 对表单进行提交
+			// jquery-form的异步提交方式
 			$roleContentForm.ajaxSubmit({
 				success : function() {
 					// 刷新页面
@@ -52,8 +52,8 @@
 				}
 			});
 		}, {
-			// 执行表单验证
-			validate: function () {
+			// 对表单数据做有效性验证
+			validate : function() {
 				var name = $roleContentForm.find("input[name='name']");
 				var jurisdictions = $roleContentForm.find("input[type='checkbox']:checked");
 				var description = $roleContentForm.find("textarea[name='description']");
@@ -63,16 +63,15 @@
 				} else {
 					hideInputTip(name);
 				}
-				
-				// 非空验证
+
 				if (jurisdictions.length === 0) {
 					return showInputTip($roleContentForm.find(".checkbox-content"), "请选择权限");
 				} else {
-					// 隐藏提示
+					// 验证通过，隐藏提示
 					hideInputTip($roleContentForm.find(".checkbox-content"));
-					
-					// 循环遍历被选中的复选框
-					jurisdictions.each(function (index) {
+
+					// 循环遍历被选中的复选框，并填充有效的name属性
+					jurisdictions.each(function(index) {
 						$(this).prop("name", "jurisdictions[" + index + "].id");
 					});
 				}
@@ -83,7 +82,7 @@
 					hideInputTip(description);
 				}
 				
-				// 所有的验证通过后，必须返回true，来告知该插件可以进入表单提交方法
+				// 当表单数据验证全部通过之后，需要返回true，告知插件验证通过，可以进行表单提交
 				return true;
 			}
 		});
