@@ -8,5 +8,7 @@
         <setting name="useGeneratedKeys" value="true"/>
         <!-- 显示SQL语句 -->
         <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!-- 开启二级缓存，默认开启 -->
+        <setting name="cacheEnabled" value="true"/>
     </settings>
 </configuration>

@@ -16,7 +16,6 @@ CREATE TABLE al_department (
 -- 创建权限表
 CREATE TABLE al_jurisdiction (
 	id BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT "id",
-	code VARCHAR(255) COMMENT "编码",
 	name VARCHAR(255) COMMENT "名称",
 	description TEXT COMMENT "描述",
 	createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "创建时间",

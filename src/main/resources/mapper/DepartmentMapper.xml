@@ -2,8 +2,11 @@
 
 <mapper namespace="online.shixun.asl.module.department.dao.DepartmentDaoMyBatis">
 
+	<!-- 配置缓存规则 -->
+	<cache eviction="FIFO" flushInterval="600000" size="512" readOnly="true"/>
+
 	<!-- 获取部门列表 -->
-	<select id="getDepartments" resultType="DepartmentDTO">
+	<select id="getDepartments" resultType="DepartmentDTO" useCache="false">
 		SELECT
 			de.id,
 			de.code,
@@ -15,7 +18,7 @@
 	</select>
 
 	<!-- 根据id获取部门 -->
-	<select id="getDepartment" resultType="DepartmentDTO">
+	<select id="getDepartment" resultType="DepartmentDTO" flushCache="true">
 		SELECT
 			de.id,
 			de.code,
