@@ -36,6 +36,16 @@ public class JurisdictionServiceImpl {
 	public List<JurisdictionDTO> getSimpleJurisdictions() {
 		return jurisdictionDao.getSimpleJurisdictions();
 	}
+	
+	/**
+	 * 通过角色id获取角色权限关联
+	 * @param roleId
+	 * @return
+	 */
+	public List<JurisdictionDTO> getRoleJurisdictions(Long roleId) {
+		return jurisdictionDao.getRoleJurisdictions(roleId);
+	}
+
 
 	/**
 	 * 根据id获取权限

@@ -44,4 +44,22 @@ public class RoleDTO extends BaseDTO {
 		this.jurisdictions = jurisdictions;
 	}
 	
+	/**
+	 * 判断外部传入的权限是否属于该角色
+	 * @param jurisdiction
+	 * @return
+	 */
+	public Boolean isHaveJurisdiction(JurisdictionDTO jurisdiction) {
+		// 循环遍历角色权限关联
+		for (JurisdictionDTO currentJurisdiction : jurisdictions) {
+			// 两个权限的id相等，表示该权限属于该角色
+			if (currentJurisdiction.getId() == jurisdiction.getId()) {
+				return true;
+			}
+		}
+		
+		// 循环完毕依旧没有找到，说明该权限不属于该角色
+		return false;
+	}
+	
 }

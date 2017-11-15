@@ -29,6 +29,13 @@ public interface JurisdictionDaoMyBatis {
 	List<JurisdictionDTO> getSimpleJurisdictions();
 	
 	/**
+	 * 通过角色id获取角色权限关联
+	 * @param roleId
+	 * @return
+	 */
+	List<JurisdictionDTO> getRoleJurisdictions(@Param("roleId") Long roleId);
+	
+	/**
 	 * 根据id获取权限
 	 * @param id
 	 * @return

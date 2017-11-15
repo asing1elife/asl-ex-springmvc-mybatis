@@ -21,7 +21,7 @@
 			<label class="input-label">权限</label>
 			<div class="checkbox-content">
 				<c:forEach var="jurisdiction" items="${jurisdictions }">
-					<label><input name="jurisdiction" type="checkbox" value="${jurisdiction.id }"> ${jurisdiction.name }</label>
+					<label><input name="jurisdiction" type="checkbox" value="${jurisdiction.id }" <c:if test="${role.isHaveJurisdiction(jurisdiction) }">checked</c:if>> ${jurisdiction.name }</label>
 				</c:forEach>
 			</div>
 		</div>

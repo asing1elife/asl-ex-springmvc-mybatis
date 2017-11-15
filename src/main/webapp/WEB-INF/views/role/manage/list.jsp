@@ -39,7 +39,7 @@
 	$(function() {
 		var $roleManageListPanel = $("#roleManageListPanel");
 
-		// 添加权限
+		// 添加角色
 		$roleManageListPanel.find(".add-role-btn").on("click", function() {
 			loadMainContent("/role/content/add", function() {
 
@@ -48,7 +48,7 @@
 			});
 		});
 
-		// 编辑权限
+		// 编辑角色
 		$roleManageListPanel.find(".edit-role-btn").on("click", function() {
 			var $this = $(this);
 			var roleId = $this.parent().parent().data("id");
@@ -60,13 +60,13 @@
 			});
 		});
 
-		// 删除权限
+		// 删除角色
 		$roleManageListPanel.find(".remove-role-btn").on("click", function() {
 			var $this = $(this);
 			var roleId = $this.parent().parent().data("id");
 
 			// 操作确认
-			if (!confirm("确定删除该权限？")) {
+			if (!confirm("确定删除该角色？")) {
 				return false;
 			}
 
@@ -93,19 +93,19 @@
 			$roleManageListPanel.find(".role-item-id").prop("checked", !isChecked);
 		});
 		
-		// 删除多个权限
+		// 删除多个角色
 		$roleManageListPanel.find(".remove-roles-btn").on("click", function () {
 			// 获取被选中复选框
 			var checkedItems = $roleManageListPanel.find(".role-item-id:checked");
 			
 			// 非空判断
 			if (checkedItems.length === 0) {
-				alert("请选择待删除权限！");
+				alert("请选择待删除角色！");
 				return false;
 			}
 			
 			// 操作确认
-			if (!confirm("确定删除选中权限？")) {
+			if (!confirm("确定删除选中角色？")) {
 				return false;
 			}
 			

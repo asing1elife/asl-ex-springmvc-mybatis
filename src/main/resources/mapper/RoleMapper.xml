@@ -12,6 +12,18 @@
 		FROM
 			al_role ro
 	</select>
+
+	<!-- 根据id获取角色 -->
+	<select id="getRole" resultType="RoleDTO">
+		SELECT
+			ro.id,
+			ro.name,
+			ro.description
+		FROM
+			al_role ro
+		WHERE
+			ro.id = #{roleId}
+	</select>
 	
 	<!-- 新增或更新角色，并填充角色id -->
 	<insert id="saveOrUpdateRole" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
@@ -44,5 +56,37 @@
 		)
 		</foreach>
 	</insert>
+	
+	<!-- 根据角色id删除角色 -->
+	<delete id="removeRole">
+		DELETE FROM
+			al_role
+		WHERE
+			id = #{roleId}
+	</delete>
+	
+	<!-- 根据角色id删除角色权限关联 -->
+	<delete id="removeRoleJurisdictions">
+		DELETE FROM
+			al_role_jurisdiction
+		WHERE
+			role_id = #{roleId}
+	</delete>
+	
+	<!-- 删除多个角色 -->
+	<delete id="removeRoles">
+		DELETE FROM
+			al_role
+		WHERE
+			id IN (${roleIds})
+	</delete>
+	
+	<!-- 删除多个角色的多个权限关联 -->
+	<delete id="removeRolesJurisdictions">
+		DELETE FROM
+			al_role_jurisdiction
+		WHERE
+			role_id IN (${roleIds})
+	</delete>
 
 </mapper>

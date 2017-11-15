@@ -34,8 +34,9 @@ public class RoleContentController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("add")
+	@RequestMapping("/add")
 	public String main(Model model, @RequestParam("roleId") Long roleId) {
+		model.addAttribute("role", roleService.getFullRole(roleId));
 		model.addAttribute("jurisdictions", jurisdictionService.getSimpleJurisdictions());
 		
 		return "/role/content/add";
@@ -50,6 +51,32 @@ public class RoleContentController {
 	@ResponseBody
 	public String save(@ModelAttribute RoleDTO role) {
 		roleService.saveOrUpdateRole(role);
+		
+		return "success";
+	}
+	
+	/**
+	 * 删除角色
+	 * @param roleId
+	 * @return
+	 */
+	@RequestMapping(value = "/remove", method = RequestMethod.POST)
+	@ResponseBody
+	public String remove(@RequestParam("roleId") Long roleId) {
+		roleService.removeRole(roleId);
+		
+		return "success";
+	}
+	
+	/**
+	 * 删除多个角色
+	 * @param roleIds
+	 * @return
+	 */
+	@RequestMapping(value = "/removes", method = RequestMethod.POST)
+	@ResponseBody
+	public String removes(@RequestParam("roleIds") String roleIds) {
+		roleService.removeRoles(roleIds);
 		
 		return "success";
 	}
