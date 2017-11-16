@@ -25,6 +25,16 @@
 			ro.id = #{roleId}
 	</select>
 	
+	<!-- 根据权限id验证权限是否被角色关联 -->
+	<select id="checkRoleJurisdiction" resultType="Integer">
+		SELECT
+			COUNT(rj.jurisdiction_id)
+		FROM
+			al_role_jurisdiction rj
+		WHERE
+			rj.jurisdiction_id = #{jurisdictionId}
+	</select>
+	
 	<!-- 新增或更新角色，并填充角色id -->
 	<insert id="saveOrUpdateRole" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
 		INSERT INTO al_role (

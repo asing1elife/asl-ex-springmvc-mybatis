@@ -30,6 +30,13 @@ public interface RoleDaoMyBatis {
 	RoleDTO getRole(@Param("roleId") Long roleId);
 	
 	/**
+	 * 根据权限id验证权限是否被角色关联
+	 * @param jurisdictionId
+	 * @return
+	 */
+	Integer checkRoleJurisdiction(@Param("jurisdictionId") Long jurisdictionId);
+	
+	/**
 	 * 新增或更新角色，并填充角色id
 	 * @param role
 	 */

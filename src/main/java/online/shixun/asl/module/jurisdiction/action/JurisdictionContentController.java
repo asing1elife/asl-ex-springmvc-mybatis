@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import online.shixun.asl.core.ResponseData;
 import online.shixun.asl.dto.JurisdictionDTO;
 import online.shixun.asl.module.jurisdiction.service.JurisdictionServiceImpl;
 
@@ -56,10 +57,8 @@ public class JurisdictionContentController {
 	 */
 	@RequestMapping(value = "/remove", method = RequestMethod.POST)
 	@ResponseBody
-	public String remove(@RequestParam("jurisdictionId") Long jurisdictionId) {
-		jurisdictionService.removeJurisdiction(jurisdictionId);
-		
-		return "success";
+	public ResponseData remove(@RequestParam("jurisdictionId") Long jurisdictionId) {
+		return jurisdictionService.removeJurisdiction(jurisdictionId);
 	}
 	
 	/**
@@ -69,10 +68,8 @@ public class JurisdictionContentController {
 	 */
 	@RequestMapping(value = "/removes", method = RequestMethod.POST)
 	@ResponseBody
-	public String removes(@RequestParam("jurisdictionIds") String jurisdictionIds) {
-		jurisdictionService.removeJurisdictions(jurisdictionIds);
-		
-		return "success";
+	public ResponseData removes(@RequestParam("jurisdictionIds") String jurisdictionIds) {
+		return jurisdictionService.removeJurisdictions(jurisdictionIds);
 	}
 	
 }

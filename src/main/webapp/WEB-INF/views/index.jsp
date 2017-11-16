@@ -132,6 +132,15 @@
 				dataType : "TEXT",
 				data : params,
 				success : function(data) {
+					// 转换数据格式					
+					var dataObj = $.parseJSON(data);
+					
+					// 判断回执是否成功
+					if (!dataObj.success) {
+						alert(dataObj.data);
+						return false;						
+					}
+					
 					// 判断回调函数是否是一个方法
 					if (typeof callback === "function") {
 						// call()用于触发指定方法

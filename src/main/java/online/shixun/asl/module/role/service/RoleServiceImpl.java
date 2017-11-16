@@ -63,6 +63,15 @@ public class RoleServiceImpl {
 	}
 	
 	/**
+	 * 验证权限是否被角色关联
+	 * @param jurisdictionId
+	 * @return true:未使用 false:已使用
+	 */
+	public Boolean checkRoleJurisdiction(Long jurisdictionId) {
+		return roleDao.checkRoleJurisdiction(jurisdictionId) == 0;
+	}
+	
+	/**
 	 * 新增或更新角色
 	 * 新增：先新增主表内容，再新增级联关系
 	 * @param role
