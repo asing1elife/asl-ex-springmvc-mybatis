@@ -8,8 +8,9 @@ package online.shixun.asl.module.jurisdiction.service;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import online.shixun.asl.dto.JurisdictionDTO;
@@ -25,6 +26,7 @@ public class JurisdictionServiceImpl {
 	 * 获取权限列表
 	 * @return
 	 */
+	@Cacheable(value = "jurisdictionService")
 	public List<JurisdictionDTO> getJurisdictions() {
 		return jurisdictionDao.getJurisdictions();
 	}
@@ -52,6 +54,7 @@ public class JurisdictionServiceImpl {
 	 * @param id
 	 * @return
 	 */
+	@Cacheable(value = "jurisdictionService")
 	public JurisdictionDTO getJurisdiction(Long id) {
 		// 有效性验证
 		if (id == -1L) {
@@ -65,6 +68,7 @@ public class JurisdictionServiceImpl {
 	 * 保存权限
 	 * @param jurisdiction
 	 */
+	@CacheEvict(value = "jurisdictionService", key = "#jurisdiction.getId()")
 	public void saveOrUpdateJurisdiction(JurisdictionDTO jurisdiction) {
 		jurisdictionDao.saveOrUpdateJurisdiction(jurisdiction);
 	}
@@ -73,6 +77,7 @@ public class JurisdictionServiceImpl {
 	 * 根据id删除权限
 	 * @param jurisdictionId
 	 */
+	@CacheEvict(value = "jurisdictionService", allEntries = true)
 	public void removeJurisdiction(Long jurisdictionId) {
 		jurisdictionDao.removeJurisdiction(jurisdictionId);
 	}
