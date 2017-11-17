@@ -34,6 +34,14 @@ public class RoleServiceImpl {
 	}
 	
 	/**
+	 * 获取角色基本信息列表
+	 * @return
+	 */
+	public List<RoleDTO> getSimpleRoles() {
+		return roleDao.getSimpleRoles();
+	}
+	
+	/**
 	 * 根据id获取角色
 	 * @param roleId
 	 * @return

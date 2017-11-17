@@ -23,6 +23,12 @@ public interface RoleDaoMyBatis {
 	List<RoleDTO> getRoles();
 	
 	/**
+	 * 获取角色基本信息列表
+	 * @return
+	 */
+	List<RoleDTO> getSimpleRoles();
+	
+	/**
 	 * 根据id获取角色
 	 * @param roleId
 	 * @return

@@ -28,6 +28,14 @@ public class DepartmentServiceImpl {
 	public List<DepartmentDTO> getDepartments() {
 		return departmentDao.getDepartments();
 	}
+	
+	/**
+	 * 获取部门基本信息列表
+	 * @return
+	 */
+	public List<DepartmentDTO> getSimpleDepartments() {
+		return departmentDao.getSimpleDepartments();
+	}
 
 	/**
 	 * 根据id获取部门
@@ -41,6 +49,15 @@ public class DepartmentServiceImpl {
 		}
 
 		return departmentDao.getDepartment(id);
+	}
+	
+	/**
+	 * 根据部门id获取部门编码
+	 * @param departmentId
+	 * @return
+	 */
+	public String getDepartmentCode(Long departmentId) {
+		return departmentDao.getDepartmentCode(departmentId);
 	}
 
 	/**

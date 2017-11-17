@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/commons/taglibs.jsp" %>
+<%@ include file="/commons/taglibs.jsp"%>
 
 <div id="userManageListPanel">
 	<div class="toolbar-menu-panel">
-		<button class="btn btn-bg" onclick="location.href='add.html'">添加</button>
+		<button class="btn btn-bg add-user-btn">添加</button>
 		<button class="btn btn-bg">删除</button>
 	</div>
 	<div class="real-content-panel">
@@ -19,194 +19,55 @@
 				<th>操作</th>
 			</thead>
 			<tbody>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="ids">&nbsp;1</td>
-					<td>DEV-00001</td>
-					<td>王萌</td>
-					<td>开发部</td>
-					<td>初级程序员</td>
-					<td>启用</td>
-					<td>2017-05-01</td>
-					<td>
-						<button class="btn btn-xs">
-							<i class="fa fa-pencil"></i>
-						</button>
-						<button class="btn btn-xs">
-							<i class="fa fa-trash-o"></i>
-						</button>
-					</td>
-				</tr>
+				<c:forEach var="user" items="${users }" varStatus="status">
+					<tr data-id="${user.id }">
+						<td><input type="checkbox" name="user-item-id">&nbsp;${status.count }</td>
+						<td>${user.code }</td>
+						<td>${user.name }</td>
+						<td>${user.department.name }</td>
+						<td>${user.role.name }</td>
+						<td>${user.statusStr }</td>
+						<td>${user.createTime }</td>
+						<td>
+							<button class="btn btn-xs edit-user-btn">
+								<i class="fa fa-pencil"></i>
+							</button>
+							<button class="btn btn-xs remove-user-btn">
+								<i class="fa fa-trash-o"></i>
+							</button>
+						</td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>
 </div>
+
+<script>
+	$(function() {
+		var $userManageListPanel = $("#userManageListPanel");
+
+		// 添加用户
+		$userManageListPanel.find(".add-user-btn").on("click", function() {
+			// 加载页面
+			loadMainContent("/user/content/add", function() {
+
+			}, {
+				userId : -1
+			});
+		});
+		
+		// 更新用户
+		$userManageListPanel.find(".edit-user-btn").on("click", function () {
+			var $this = $(this);
+			var userId = $this.parent().parent().data("id");
+			
+			// 加载页面
+			loadMainContent("/user/content/add", function() {
+
+			}, {
+				userId : userId
+			});
+		});
+	})
+</script>

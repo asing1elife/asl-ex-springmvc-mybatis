@@ -1,0 +1,86 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="online.shixun.asl.module.user.dao.UserDaoMyBatis">
+	
+	<!-- 获取用户列表 -->
+	<select id="getUsers" resultType="UserDTO">
+		SELECT
+			us.id,
+			us.code,
+			us.name,
+			us.gender,
+			us.status,
+			us.createTime,
+			ro.name AS 'role.name',
+			de.name AS 'department.name'
+		FROM
+			al_user us,
+			al_role ro,
+			al_department de
+		WHERE
+			us.role_id = ro.id AND
+			us.department_id = de.id
+	</select>
+	
+	<!-- 根据用户id获取用户信息 -->
+	<select id="getUser" resultType="UserDTO">
+		SELECT
+			us.id,
+			us.code,
+			us.name,
+			us.password,
+			us.mobile,
+			us.gender,
+			us.status,
+			us.role_id AS 'role.id',
+			us.department_id AS 'department.id',
+			us.createTime
+		FROM
+			al_user us
+		WHERE
+			us.id = #{userId}
+	</select>
+	
+	<!-- 新增或更新用户 -->
+	<insert id="saveOrUpdateUser" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO al_user (
+			id,
+			name,
+			password,
+			mobile,
+			department_id,
+			role_id,
+			gender,
+			status
+		)
+		VALUES (
+			#{id},
+			#{name},
+			#{password},
+			#{mobile},
+			#{department.id},
+			#{role.id},
+			#{gender},
+			#{status}
+		)
+		ON DUPLICATE KEY UPDATE
+			name = #{name},
+			password = #{password},
+			mobile = #{mobile},
+			department_id = #{department.id},
+			role_id = #{role.id},
+			gender = #{gender},
+			status = #{status}
+	</insert>
+	
+	<!-- 更新用户编码 -->
+	<update id="updateUserCode">
+		UPDATE
+			al_user
+		SET
+			code = #{code}
+		WHERE
+			id = #{userId}
+	</update>
+
+</mapper>

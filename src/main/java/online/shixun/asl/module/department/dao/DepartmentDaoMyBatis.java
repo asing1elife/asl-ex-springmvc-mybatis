@@ -23,11 +23,24 @@ public interface DepartmentDaoMyBatis {
 	List<DepartmentDTO> getDepartments();
 	
 	/**
+	 * 获取部门基本信息列表
+	 * @return
+	 */
+	List<DepartmentDTO> getSimpleDepartments();
+	
+	/**
 	 * 根据id获取部门
 	 * @param id
 	 * @return
 	 */
 	DepartmentDTO getDepartment(@Param("id") Long id);
+	
+	/**
+	 * 根据部门id获取部门编码
+	 * @param departmentId
+	 * @return
+	 */
+	String getDepartmentCode(@Param("departmentId") Long departmentId);
 	
 	/**
 	 * 新增或更新部门
