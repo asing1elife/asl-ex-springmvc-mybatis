@@ -39,6 +39,10 @@ public class UserServiceImpl {
 	 * @return
 	 */
 	public UserDTO getUser(Long userId) {
+		if (userId == -1L) {
+			return new UserDTO();
+		}
+		
 		return userDao.getUser(userId);
 	}
 	
@@ -56,6 +60,22 @@ public class UserServiceImpl {
 		
 		// 根据用户id和部门code，更新用户code
 		userDao.updateUserCode(user.getId(), code + "-" + user.getId());
+	}
+
+	/**
+	 * 根据用户id删除用户
+	 * @param userId
+	 */
+	public void removeUser(Long userId) {
+		userDao.removeUser(userId);
+	}
+	
+	/**
+	 * 根据用户id删除多个用户
+	 * @param userIds
+	 */
+	public void removeUsers(String userIds) {
+		userDao.removeUsers(userIds);
 	}
 	
 }

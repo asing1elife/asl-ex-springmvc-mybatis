@@ -42,4 +42,16 @@ public interface UserDaoMyBatis {
 	 */
 	void updateUserCode(@Param("userId") Long userId, @Param("code") String code);
 	
+	/**
+	 * 根据用户id删除用户
+	 * @param userId
+	 */
+	void removeUser(@Param("userId") Long userId);
+	
+	/**
+	 * 根据用户id删除多个用户
+	 * @param userId
+	 */
+	void removeUsers(@Param("userIds") String userIds);
+	
 }

@@ -61,5 +61,31 @@ public class UserContentController {
 		
 		return new ResponseData();
 	}
+	
+	/**
+	 * 删除用户
+	 * @param userId
+	 * @return
+	 */
+	@PostMapping("/remove")
+	@ResponseBody
+	public ResponseData remove(@RequestParam("userId") Long userId) {
+		userService.removeUser(userId);
+		
+		return new ResponseData();
+	}
+	
+	/**
+	 * 删除多个用户
+	 * @param userIds
+	 * @return
+	 */
+	@PostMapping("/removes")
+	@ResponseBody
+	public ResponseData removes(@RequestParam("userIds") String userIds) {
+		userService.removeUsers(userIds);
+		
+		return new ResponseData();
+	}
 
 }

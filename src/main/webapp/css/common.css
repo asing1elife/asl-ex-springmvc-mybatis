@@ -159,6 +159,6 @@ body {
 
 #bottomContentPanel .right-content-panel .bottom-menu-panel {
 	flex-basis: 30px;
-	padding-top: 15px;
+	padding: 15px 0;
 	border-top: 1px solid #ebedf1;
 }

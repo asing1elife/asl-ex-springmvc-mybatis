@@ -82,5 +82,21 @@
 		WHERE
 			id = #{userId}
 	</update>
+	
+	<!-- 根据用户id删除用户 -->
+	<delete id="removeUser">
+		DELETE FROM
+			al_user
+		WHERE
+			id = #{userId}
+	</delete>
+	
+	<!-- 根据用户id删除多个用户 -->
+	<delete id="removeUsers">
+		DELETE FROM
+			al_user
+		WHERE
+			id IN (${userIds})
+	</delete>
 
 </mapper>

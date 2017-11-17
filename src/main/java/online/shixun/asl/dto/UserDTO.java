@@ -30,7 +30,7 @@ public class UserDTO extends BaseDTO {
 	private String gender;
 	
 	// 状态 
-	private Boolean status;
+	private Boolean status = true;
 	
 	public String getCode() {
 		return code;
